@@ -32,7 +32,7 @@ module Vagrant
                 config.vm.network "forwarded_port", guest: 5432, host: 5432
             end
 
-            if roles.any?{|a| a['role'] == "mysql"}
+            if roles.any?{|a| a['role'] == "mariadb"} || roles.any?{|a| a['role'] == "mysql"}
                 config.vm.network "forwarded_port", guest: 3306, host: 3306
             end
 
